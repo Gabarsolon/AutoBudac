@@ -3307,10 +3307,11 @@ hero-btn {
 }
 
 .contact-form-area .contact-form-wrapper {
+	position: relative;
+	text-align: right;
 	background: #f5f5f5;
 	padding: 80px;
 	border-radius: 8px
-	float:right;
 }
 
 @media (max-width: 575px) {
