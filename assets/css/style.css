@@ -3311,8 +3311,8 @@ hero-btn {
 	background: #f5f5f5;
 	padding: 100px;
 	border-radius: 8px;
-	margin-left: 100px;
-	margin-right: -200px;
+	margin-left: 200px;
+	margin-right: -300px;
 }
 
 @media (max-width: 575px) {
