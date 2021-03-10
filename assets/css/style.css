@@ -2263,7 +2263,7 @@ hero-btn {
 }
 
 .padding-bottom {
-	padding-bottom: 190px
+	padding-bottom: 250px
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -3193,6 +3193,7 @@ hero-btn {
 .categories-area .single-cat {
 	border: 1px solid #e1ebf7;
 	border-radius: 6px;
+	margin-bottom:-50px;
 	padding: 85px 22px;
 	-webkit-transition: all .4s ease-out 0s;
 	-moz-transition: all .4s ease-out 0s;
@@ -3201,6 +3202,7 @@ hero-btn {
 	transition: all .4s ease-out 0s;
 	position: relative;
 	z-index: 1
+	
 }
 
 @media (max-width: 575px) {
