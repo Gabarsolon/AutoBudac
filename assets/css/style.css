@@ -2224,13 +2224,13 @@ hero-btn {
 
 .section-padding30 {
 	padding-top: 195px;
-	padding-bottom: 170px
+	padding-bottom: 170px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
 	.section-padding30 {
 		padding-top: 195px;
-		padding-bottom: 170px
+		padding-bottom: 170px;
 	}
 }
 
@@ -3016,7 +3016,7 @@ hero-btn {
 .hero-overly::before {
 	position: absolute;
 	content: "";
-	background-color: rgba(1, 10, 28, 0.6);
+	/*background-color: rgba(1, 10, 28, 0.6);*/
 	width: 100%;
 	height: 100%;
 	left: 0;
