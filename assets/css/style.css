@@ -3332,6 +3332,13 @@ hero-btn {
 	}
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1920px) {
+	.contact-form-area .contact-form-wrapper {
+		padding: 30px;
+		margin:auto;
+	}
+}
+
 .contact-form-area .contact-form-wrapper form.contact-form input {
 	height: 60px;
 	width: 100%;
