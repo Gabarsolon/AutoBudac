@@ -35,23 +35,23 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "haide, ai un nume, nu?",
+                    minlength: "numele tau trebuie sa aiba macar 2 caractere"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "haide, ai un subiect, nu?",
+                    minlength: "subiectul tau trebuie sa aiba macar 4 caractere"
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "haide, ai un numar",
+                    minlength: "numarul trebuie sa aiba macar 5 caractere"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "fara email n-ai mesaj"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "mda, trebuie sa scri ceva in acest measj...",
+                    minlength: "asta-i tot, serios?"
                 }
             },
             submitHandler: function(form) {
