@@ -2,6 +2,10 @@
 .white-bg {
 	background: #ffffff
 }
+.checkbox{
+	font-size: 1px;
+	size: 1px;
+}
 .iframe {
   position: relative;
   overflow: hidden;
