@@ -83,7 +83,7 @@
                                                 <ul class="submenu">
                                                      <li><a href="blog.html">Anunțuri</a></li>
                                                     <li><a href="blog_details.html">Caută anunțuri</a></li>
-                                                    <li><a href="elements.html">Adaugă anunț</a></li>
+                                                    <li><a href="incarcare.html">Adaugă anunț</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="contact.php">Contact</a></li>
@@ -141,7 +141,7 @@
                         <h2 class="contact-title">Ține Legătura</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" action="contact.php" method="post" id="contactForm" >
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -157,97 +157,91 @@
                                     <div class="form-group">
                                         <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Introduceți subiectul">
-                                    </div>
-                                </div>
-                                <?php
-                                
-                                //stabilire date de conectare
-                                $server = "localhost";
-                                $utilizator = "contact";
-                                $parola = "RFwqDCwO3_iRhAYQ";
-                                $baza_de_date = "contact";
+                                </div>    
+                            </div>
 
-                                //creare conexiune
-                                $conexiune = new mysqli($server, $utilizator, $parola, $baza_de_date);
+                            <div class="form-group mt-3">
+                                <input type="submit" class="button button-contactForm boxed-btn" value="TRIMITE"></input>
+                            </div>
+                            
+                        </form>
+                        <?php
+                            //stabilire date de conectare
+                            $server = "localhost";
+                            $utilizator = "contact";
+                            $parola = "RFwqDCwO3_iRhAYQ";
+                            $baza_de_date = "contact";
 
-                                //verificare conexiune
-                                if ($conexiune->connect_error) {
-                                    die("<p>Eroare la stabilirea conexiunii: " . $conexiune->connect_error . "</p");
-                                }
-                                //echo "<p>Succes conexiune!</p>";
+                            //creare conexiune
+                            $conexiune = new mysqli($server, $utilizator, $parola, $baza_de_date);
 
-                                if( count($_POST) > 0 ) {
-                                        //contruire comanda de inserare
-                                        $comanda = "INSERT INTO mesaje(nume, email, mesaj) VALUES(
-                                            '".$_POST["nume"]."', 
-                                            '".$_POST["email"]."', 
-                                            '".$_POST["mesaj"]."'
-                                        )";
+                            //verificare conexiune
+                            if ($conexiune->connect_error) {
+                                die("<p>Eroare la stabilirea conexiunii: " . $conexiune->connect_error . "</p");
+                            }
+                            echo "<p>Succes conexiune!</p>";
 
-                                        //trimitere comanda
-                                        if ($conexiune->query($comanda) === TRUE) {
-                                          echo "Mesaj înregistrat. Mulțumim!";
-                                        } else {
-                                          echo "<p>Eroare la inserarea mesajului: " . $conexiune->error . "</p>";
-                                        }
+                            if( count($_POST) > 0 ) {
+                                    //contruire comanda de inserare
+                                    $comanda = "INSERT INTO mesaje(nume, email, mesaj) VALUES(
+                                        '".$_POST["name"]."', 
+                                        '".$_POST["email"]."', 
+                                        '".$_POST["message"]."'
+                                    )";
 
+                                    //trimitere comanda
+                                    if ($conexiune->query($comanda) === TRUE) {
+                                      echo "Mesaj înregistrat. Mulțumim!";
                                     } else {
-                                        //echo "<p>Introduceți un mesaj!</p>";
+                                      echo "<p>Eroare la inserarea mesajului: " . $conexiune->error . "</p>";
                                     }
 
-                                //construire comanda
-                                $comanda = "SELECT id, nume, mesaj FROM mesaje ORDER BY id DESC LIMIT 10";
-
-                                //trimitere comanda
-                                $rezultat = $conexiune->query($comanda);
-
-                                //test erori execuție comanda
-                                if( $conexiune->error )
-                                    echo "<p>Eroare la execuția comenzii SQL: " . $conexiune->error . "</p>";
-
-                                //construire tabel html cu mesaje
-                                if($rezultat->num_rows > 0) {
-                                    //generare html antet tabel
-                                    echo "
-                                    <table> 
-                                        <tr> 
-                                            <th>Nr. crt.</th>
-                                            <th>Nume</th> 
-                                            <th>Mesaj</th>  
-                                        </tr>
-                                    ";
-
-                                    //generare html pt. liniile tabelului
-                                    while($linie = $rezultat->fetch_assoc()) {
-                                        echo "
-                                            <tr>
-                                                <td>".$linie["id"]."</td>
-                                                <td>".$linie["nume"]."</td>
-                                                <td>".$linie["mesaj"]."</td>
-                                                <td>".$linie["subiect"]."</td>
-                                            </tr>
-                                        ";
-                                        }
-
-                                        //generare html sf. tabel
-                                    echo "</table>";
                                 } else {
-                                    echo "<p>Nu există mesaje!</p>";
+                                    echo "<p>Introduceți un mesaj!</p>";
                                 }
 
-                                //inchidere conexiune
-                                $conexiune->close();
-                                
-                            ?>
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Trimite</button>
-                            </div>
-                        </form>
+                            //construire comanda
+                            $comanda = "SELECT id, nume, mesaj FROM mesaje ORDER BY id DESC LIMIT 10";
+
+                            //trimitere comanda
+                            $rezultat = $conexiune->query($comanda);
+
+                            //test erori execuție comanda
+                            if( $conexiune->error )
+                                echo "<p>Eroare la execuția comenzii SQL: " . $conexiune->error . "</p>";
+
+                            //construire tabel html cu mesaje
+                            if($rezultat->num_rows > 0) {
+                                //generare html antet tabel
+                                echo "
+                                <table> 
+                                    <tr> 
+                                        <th>Nr. crt.</th>
+                                        <th>Nume</th> 
+                                        <th>Mesaj</th>  
+                                    </tr>
+                                ";
+
+                                //generare html pt. liniile tabelului
+                                while($linie = $rezultat->fetch_assoc()) {
+                                    echo "
+                                        <tr>
+                                            <td>".$linie["id"]."</td>
+                                            <td>".$linie["name"]."</td>
+                                            <td>".$linie["message"]."</td>
+                                        </tr>
+                                    ";
+                                    }
+
+                                    //generare html sf. tabel
+                                echo "</table>";
+                            } else {
+                                echo "<p>Nu există mesaje!</p>";
+                            }
+
+                            //inchidere conexiune
+                            $conexiune->close();
+    ?>
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">

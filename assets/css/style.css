@@ -2,6 +2,7 @@
 .white-bg {
 	background: #ffffff
 }
+
 .checkbox{
 	font-size: 1px;
 	size: 1px;
@@ -3738,15 +3739,15 @@ hero-btn {
 
 .testimonial-form {
 	padding: 50px;
-	border-radius: 10px;
-	background: #fff;
-	padding: 50px;
-	border-radius: 10px
+    border-radius: 10px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
 }
 
 @media (max-width: 575px) {
 	.testimonial-form {
-		padding: 30px
+		padding: 5px;
 	}
 }
 
