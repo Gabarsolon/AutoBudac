@@ -161,7 +161,7 @@
                             </div>
 
                             <div class="form-group mt-3">
-                                <input type="submit" class="button button-contactForm boxed-btn" value="TRIMITE"></input>
+                                <input type="submit" class="button button-contactForm boxed-btn" value="TRIMITE">
                             </div>
                             
                         </form>
@@ -392,7 +392,7 @@
 
         <!-- contact js -->
         <script src="./assets/js/contact.js"></script>
-        <script src="./assets/js/jquery.form.js"></script>
+        <!-- <script src="./assets/js/jquery.form.js"></script> -->
         <script src="./assets/js/jquery.validate.min.js"></script>
         <script src="./assets/js/mail-script.js"></script>
         <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
