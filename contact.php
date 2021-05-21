@@ -21,6 +21,16 @@
         <link rel="stylesheet" href="assets/css/slick.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
         <link rel="stylesheet" href="assets/css/style.css">
+            <!--<style>
+                table, th, td {
+                  border: 1px solid black;
+                }
+                table.center {
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+            </style>
+        -->
 </head>
 
 <body>
@@ -92,7 +102,7 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="contact.php" class="btn header-btn">încarcă un anunț</a>
+                                    <a href="incarcare.html" class="btn header-btn">încarcă un anunț</a>
                                 </div>
                             </div>
                         </div> 
@@ -157,7 +167,12 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
                                     </div>
-                                </div>    
+                                </div>   
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Introduceți subiectul">
+                                    </div>
+                                </div> 
                             </div>
 
                             <div class="form-group mt-3">
@@ -190,9 +205,10 @@
 
                             if( count($_POST) > 0 ) {
                                     //contruire comanda de inserare
-                                    $comanda = "INSERT INTO mesaje(nume, email, mesaj) VALUES(
+                                    $comanda = "INSERT INTO mesaje(nume, email, subiect, mesaj) VALUES(
                                         '".$_POST["name"]."', 
-                                        '".$_POST["email"]."', 
+                                        '".$_POST["email"]."',
+                                        '".$_POST["subject"]."',
                                         '".$_POST["message"]."'
                                     )";
 
@@ -203,12 +219,10 @@
                                       echo "<p>Eroare la inserarea mesajului: " . $conexiune->error . "</p>";
                                     }
 
-                                } else {
-                                    echo "<p>Introduceți un mesaj!</p>";
                                 }
 
                             //construire comanda
-                            $comanda = "SELECT id, nume, mesaj FROM mesaje ORDER BY id DESC LIMIT 10";
+                            $comanda = "SELECT id, nume, subiect, email, mesaj FROM mesaje ORDER BY id DESC LIMIT 10";
 
                             //trimitere comanda
                             $rezultat = $conexiune->query($comanda);
@@ -221,10 +235,12 @@
                             if($rezultat->num_rows > 0) {
                                 //generare html antet tabel
                                 echo "
-                                <table> 
-                                    <tr> 
+                                <table class='progress-table'> 
+                                    <tr > 
                                         <th>Nr. crt.</th>
                                         <th>Nume</th> 
+                                        <th>Subiect</th>
+                                        <th>Email</th>
                                         <th>Mesaj</th>  
                                     </tr>
                                 ";
@@ -235,6 +251,8 @@
                                         <tr>
                                             <td>".$linie["id"]."</td>
                                             <td>".$linie["nume"]."</td>
+                                            <td>".$linie["subiect"]."</td>
+                                            <td>".$linie["email"]."</td>
                                             <td>".$linie["mesaj"]."</td>
                                         </tr>
                                     ";
