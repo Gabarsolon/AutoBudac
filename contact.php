@@ -150,12 +150,12 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Introduceți numele">
+                                        <input type="text" class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Introduceți numele">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input type="text" class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
                                     </div>
                                 </div>    
                             </div>
@@ -165,6 +165,13 @@
                             </div>
                             
                         </form>
+                    
+                       <!-- <form action="contact.php" method="post">
+                        Nume: <input type="text" name="name"><br>
+                        Email: <input type="email" name="email"><br>
+                        Mesaj: <textarea id="mesaj" name="message" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Adaugă mesaj"> 
+                         </form>-->
                         <?php
                             //stabilire date de conectare
                             $server = "localhost";
@@ -227,8 +234,8 @@
                                     echo "
                                         <tr>
                                             <td>".$linie["id"]."</td>
-                                            <td>".$linie["name"]."</td>
-                                            <td>".$linie["message"]."</td>
+                                            <td>".$linie["nume"]."</td>
+                                            <td>".$linie["mesaj"]."</td>
                                         </tr>
                                     ";
                                     }

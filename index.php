@@ -8,7 +8,7 @@
 	<h1>Lăsați un mesaj!</h1>
 	<!-- formular -->
 	<form action="index.php" method="post">
-		Nume: <input type="text" name="nuddme"><br>
+		Nume: <input type="text" name="nume"><br>
 		Email: <input type="email" name="email"><br>
 		Mesaj: <textarea id="mesaj" name="mesaj" rows="4" cols="50"></textarea><br>
 		<input type="submit" value="Adaugă mesaj"> 
