@@ -2,7 +2,11 @@
 .white-bg {
 	background: #ffffff
 }
-
+/*@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.single-gallery-image {
+		
+	}
+}*/
 .checkbox{
 	font-size: 1px;
 	size: 1px;
