@@ -92,7 +92,7 @@
                                             <li><a href="blog.html">Anunțuri</a>
                                                 <ul class="submenu">
                                                      <li><a href="blog.html">Anunțuri</a></li>
-                                                    <li><a href="blog_details.html">Caută anunțuri</a></li>
+                                                    <li><a href="cautare.html">Caută anunțuri</a></li>
                                                     <li><a href="incarcare.html">Adaugă anunț</a></li>
                                                 </ul>
                                             </li>
