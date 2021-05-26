@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1616764746 source:f:\atestat\bilete\biletul_9\main.cpp
+	<iostream>
+	<fstream>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1622056599 source:f:\atestat\bilete\biletul_28\main.cpp
+	<iostream>
+	<fstream>
+	<cmath>
+
