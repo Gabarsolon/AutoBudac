@@ -34,6 +34,8 @@ int main()
             fin>>x;
             mat[k][i]=x;
         }
+        fin>>x;
+        mat[(k+n)/2][(k+n)/2]=x;
         k++;
         n--;
     }
